@@ -1,4 +1,4 @@
-# Portfolio pessoal
+# GITHUB PROFILE
 
 Projeto que permite a pessoa procurar um usuário do github e mostra os os dados que API do Github retorna.
 
