@@ -6,7 +6,7 @@ export async function GET(request: Request, { params }: { params: { username: st
   try {
     const reposResponse = await axios.get(`https://api.github.com/users/${username}/repos`, {
       headers: {
-        authorization: `bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
+        Authorization: `bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
       },
     });
     const repos = reposResponse.data;
