@@ -47,11 +47,11 @@ export function Profile({ user, mostLanguages, loading }: any) {
                 <div className="w-[500px] p-auto m-auto">
                   {Object.keys(mostLanguages).length > 0 ? (
                     <div className="w-[500px] h-[350px]">
-                      <h1 className="text-center font-bold text-2xl">Most Used Languages</h1>
+                      <h1 className="text-center font-bold text-2xl">Linguagem mais usadas</h1>
                       <DoughnutChart mostLanguages={mostLanguages} />
                     </div>
                   ) : (
-                    <h1 className="text-center font-bold text-2xl">nada encontrado</h1>
+                    <h1 className="text-center font-bold text-2xl">Nenhuma linguagem encontrada.</h1>
                   )}
                 </div>
               </div>

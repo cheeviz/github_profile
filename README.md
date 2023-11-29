@@ -35,7 +35,13 @@ yarn install
 npm install
 ```
 
-4. **Inicie o servidor de desenvolvimento:**
+4. **Crie uma .env**
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000
+NEXT_PUBLIC_GITHUB_TOKEN=SEU TOKEN DO GITHUB
+```
+
+5. **Inicie o servidor de desenvolvimento:**
 
 ```bash
 yarn run start
