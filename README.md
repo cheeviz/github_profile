@@ -37,8 +37,7 @@ npm install
 
 4. **Crie uma .env**
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:3000
-NEXT_PUBLIC_GITHUB_TOKEN=SEU TOKEN DO GITHUB
+NEXT_PUBLIC_GITHUB_TOKEN=SEU_TOKEN_DO_GITHUB
 ```
 
 5. **Inicie o servidor de desenvolvimento:**

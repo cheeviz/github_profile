@@ -10,6 +10,13 @@ export function DoughnutChart({ mostLanguages = {} }: DoughnutChartProps) {
     responsive: true,
     maintainAspectRatio: false,
     aspectRatio: 1,
+    plugins: {
+      legend: {
+        labels: {
+          color: 'white'
+        }
+      }
+    }
   };
   const chartData = {
     labels: Object.keys(mostLanguages),

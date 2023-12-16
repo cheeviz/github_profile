@@ -2,11 +2,11 @@
 
 import { Profile } from "@/components/Profile";
 import { Search } from "@/components/Search";
-import API from "@/lib/api";
-import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { useState } from "react";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "chart.js/auto";
+import axios from "axios";
 
 export interface UserProps {
   login: string;
@@ -28,10 +28,10 @@ export default function Home() {
       setData([]);
       setMostLanguages({});
 
-      const userResponse = await API.get(`/api/user/${search}`);
+      const userResponse = await axios.get(`/api/user/${search}`);
       setData([userResponse.data]);
 
-      const mostLanguagesResponse = await API.get(`/api/languages/${search}`);
+      const mostLanguagesResponse = await axios.get(`/api/languages/${search}`);
       setMostLanguages(mostLanguagesResponse.data);
     } catch (error: any) {
       toast.error(error.response.data, {
@@ -50,7 +50,6 @@ export default function Home() {
 
   return (
     <main>
-      <ToastContainer />
       <Search onSearch={onHandleKeyDown} />
       <Profile user={data} mostLanguages={mostLanguages} loading={loading} />
     </main>

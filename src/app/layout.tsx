@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { ToastContainer } from "react-toastify";
 
 const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -13,14 +14,11 @@ export const metadata: Metadata = {
   description: "Visualize perfil do github",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
+        <ToastContainer />
         <Header text="Github Profile" />
         {children}
       </body>
