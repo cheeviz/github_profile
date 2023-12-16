@@ -14,12 +14,17 @@ export interface UserProps {
   bio: string;
   avatar_url: string;
   html_url: string;
+  created_at: string
+}
+
+export interface LanguagesProps {
+  [key: string]: string;
 }
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState<UserProps[]>([]);
-  const [mostLanguages, setMostLanguages] = useState<any>({});
+  const [mostLanguages, setMostLanguages] = useState<LanguagesProps>({});
 
   const onHandleKeyDown = async (search: string) => {
     try {

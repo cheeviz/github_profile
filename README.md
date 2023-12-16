@@ -1,6 +1,6 @@
 # GITHUB PROFILE
 
-Projeto que permite a pessoa procurar um usuário do github e mostra os os dados que API do Github retorna.
+Projeto que permite a pessoa procurar um usuário do Github e mostra os os dados que API do Github retorna.
 
 ## Funcionalidades
 
@@ -11,7 +11,7 @@ Projeto que permite a pessoa procurar um usuário do github e mostra os os dados
 
 Antes de começar, certifique-se que tenha o seguinte instalado em sua maquina:
 
-- Node.JS [Donwload](http://nodejs.org)
+- Node.JS [Download](http://nodejs.org)
 
 ## Como iniciar o projeto
 
@@ -35,7 +35,7 @@ yarn install
 npm install
 ```
 
-4. **Crie uma .env**
+4. **Crie uma .env na raiz do projeto**
 ```env
 NEXT_PUBLIC_GITHUB_TOKEN=SEU_TOKEN_DO_GITHUB
 ```
