@@ -5,7 +5,7 @@ Projeto que permite a pessoa procurar um usuário do Github e mostra os os dados
 ## Funcionalidades
 
 - Procurar usuário do github
-- Estatística das linguages mais usadas
+- Estatística das linguagens mais usadas
 
 ## Pré-requisitos
 
