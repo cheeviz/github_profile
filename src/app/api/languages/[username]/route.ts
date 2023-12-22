@@ -27,23 +27,22 @@ export async function GET(request: Request, { params }: { params: { username: st
       }
     }
 
-    if (Object.keys(allLanguages).length === 0) {
-      return new Response("Nenhuma linguagem foi encontrada", {
-        status: 404,
-      });
-    }
-
     const totalBytes: number = Object.values(allLanguages).reduce((total, bytes) => total + bytes, 0);
 
     const LanguageWithPercentage: Record<string, number> = Object.fromEntries(
-      Object.entries(allLanguages).map(([languages, bytes]) => [
-        languages,
-        Number(((bytes / totalBytes) * 100).toFixed(2)),
-      ]),
+      Object.entries(allLanguages).map(([languages, bytes]) => [languages, Number(((bytes / totalBytes) * 100).toFixed(2))]),
     );
 
     return Response.json(LanguageWithPercentage);
-  } catch (error) {
+  } catch (error: any) {
+    if (axios.isAxiosError(error) && error.response) {
+      const responseData = error.response.data;
+
+      if (responseData.message === "Not Found" && error.response.status === 404)
+        return new Response(`Nenhuma linguagem foi encontrada`, {
+          status: 404,
+        });
+    }
     throw error;
   }
 }

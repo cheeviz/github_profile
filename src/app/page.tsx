@@ -3,10 +3,9 @@
 import { Profile } from "@/components/Profile";
 import { Search } from "@/components/Search";
 import { useState } from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import "chart.js/auto";
 import axios from "axios";
+import { ToastError } from "@/lib/Toast";
 
 export interface UserProps {
   login: string;
@@ -14,7 +13,10 @@ export interface UserProps {
   bio: string;
   avatar_url: string;
   html_url: string;
-  created_at: string
+  repos_url: string;
+  public_repos: number;
+  followers: number;
+  created_at: string;
 }
 
 export interface LanguagesProps {
@@ -29,7 +31,7 @@ export default function Home() {
   const onHandleKeyDown = async (search: string) => {
     try {
       setLoading(true);
-
+      
       setData([]);
       setMostLanguages({});
 
@@ -39,24 +41,16 @@ export default function Home() {
       const mostLanguagesResponse = await axios.get(`/api/languages/${search}`);
       setMostLanguages(mostLanguagesResponse.data);
     } catch (error: any) {
-      toast.error(error.response.data, {
-        position: "top-right",
-        autoClose: 2500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: true,
-        theme: "light",
-      });
+      ToastError(error.response.data);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <main>
+    <>
       <Search onSearch={onHandleKeyDown} />
       <Profile user={data} mostLanguages={mostLanguages} loading={loading} />
-    </main>
+    </>
   );
 }

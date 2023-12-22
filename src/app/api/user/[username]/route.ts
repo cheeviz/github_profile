@@ -1,5 +1,7 @@
 import axios from "axios";
 
+const github_url = "https://github.com";
+
 export const dynamic = "force-dynamic";
 export async function GET(request: Request, { params }: { params: { username: string } }) {
   const username = params.username;
@@ -11,14 +13,19 @@ export async function GET(request: Request, { params }: { params: { username: st
     });
 
     const user = userResponse.data;
+
+    const repos_url = user.type === "Organization" ? `${github_url}/orgs/${user.login}/repositories` : `${github_url}/${user.login}?tab=repositories`;
+
     const data = {
       login: user.login,
-      avatar_url: user.avatar_url,
-      html_url: user.url,
       name: user.name,
       bio: user.bio,
+      avatar_url: user.avatar_url,
+      html_url: user.url,
+      repos_url: repos_url,
+      public_repos: user.public_repos,
+      followers: user.followers,
       created_at: user.created_at,
-      updated_at: user.updated_at,
     };
 
     return Response.json(data);
