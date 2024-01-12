@@ -1,9 +1,9 @@
-import { LanguagesProps } from "@/app/page";
+import { LanguagesProps } from "@/types";
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 interface DoughnutChartProps {
-  mostLanguages?: LanguagesProps
+  mostLanguages?: LanguagesProps;
 }
 
 export function DoughnutChart({ mostLanguages = {} }: DoughnutChartProps) {
@@ -14,10 +14,10 @@ export function DoughnutChart({ mostLanguages = {} }: DoughnutChartProps) {
     plugins: {
       legend: {
         labels: {
-          color: 'white'
-        }
-      }
-    }
+          color: "white",
+        },
+      },
+    },
   };
   const chartData = {
     labels: Object.keys(mostLanguages),

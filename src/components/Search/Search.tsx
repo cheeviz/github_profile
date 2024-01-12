@@ -12,10 +12,9 @@ export function Search({ onSearch }: SearchProps) {
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      if (search === "") {
+      if (!search.trim()) {
         return ToastError("Digite o nome do usuário");
       }
-
       onSearch(search);
     }
   };
