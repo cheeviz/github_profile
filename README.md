@@ -2,6 +2,12 @@
 
 Projeto que permite a pessoa procurar um usuário do Github e mostra os os dados que API do Github retorna.
 
+## Tecnologias
+
+- NextJS
+- TailwindCSS
+- Chart.js
+
 ## Funcionalidades
 
 - Procurar usuário do github
