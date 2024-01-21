@@ -37,8 +37,6 @@ cd github_profile
 
 ```bash
 yarn install
-# ou
-npm install
 ```
 
 4. **Crie uma .env na raiz do projeto**
@@ -49,8 +47,6 @@ NEXT_PUBLIC_GITHUB_TOKEN=SEU_TOKEN_DO_GITHUB
 5. **Inicie o servidor de desenvolvimento:**
 
 ```bash
-yarn run start
-# ou
 npm run start
 ```
 
