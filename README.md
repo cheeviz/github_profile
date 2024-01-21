@@ -36,7 +36,7 @@ cd github_profile
 3. **Instale as dependências:**
 
 ```bash
-yarn install
+npm install
 ```
 
 4. **Crie uma .env na raiz do projeto**
